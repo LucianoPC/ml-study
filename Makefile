@@ -1,10 +1,13 @@
-.PHONY: all clean
+.PHONY: all test clean
 
 IRIS_URL = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 FORNECEDORES_URL = "http://api.salic.cultura.gov.br/v1/fornecedores/?format=csv"
 
 
 all: data/processed/processed.pickle reports/figures/exploratory.png
+
+test: all
+	pytest src
 
 clean:
 	rm -f data/raw/*.csv
