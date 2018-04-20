@@ -19,9 +19,7 @@ data/raw/fornecedores.csv:
 	python src/data/download.py $(FORNECEDORES_URL) $@
 
 data/processed/processed.pickle: data/raw/iris.csv
-	python src/data/preprocess.py $< $@ --excel
-data/processed/processed.xlsx
+	python src/data/preprocess.py $< $@ --excel data/processed/processed.xlsx
 
 reports/figures/exploratory.png: data/processed/processed.pickle
-	python src/visualization/exploratory.py
-data/processed/processed.py reports/figures/exploratory.png
+	python src/visualization/exploratory.py $< $@

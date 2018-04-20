@@ -3,11 +3,9 @@ import click
 import matplotlib
 import seaborn as sns
 
-from data import read_processed_data
-
-
-# matplotlib.use('agg')
 sys.path.append('src')
+
+from data import read_processed_data
 
 
 def exploratory_visualization(dframe):

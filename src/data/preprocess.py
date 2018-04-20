@@ -30,7 +30,7 @@ def read_processed_data(fname='data/processed/processed.pickle'):
 @click.argument('input_file', type=click.Path(exists=True, readable=True,
                                               dir_okay=False))
 @click.argument('output_file', type=click.Path(writable=True, dir_okay=False))
-@click.argument('--excel', type=click.Path(writable=True, dir_okay=False))
+@click.option('--excel', type=click.Path(writable=True, dir_okay=False))
 def main(input_file, output_file, excel):
     print('Preprocessing Data')
 
@@ -38,6 +38,7 @@ def main(input_file, output_file, excel):
     dframe = preprocess_data(dframe)
 
     dframe.to_pickle(output_file)
+
     if excel is not None:
         dframe.to_excel(excel)
 

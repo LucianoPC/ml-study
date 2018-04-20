@@ -1,0 +1,16 @@
+packages:
+ - python3-tk
+
+pip:
+ - click
+ - jupyter
+ - matplotlib
+ - numpy
+ - openpyxl
+ - pandas
+ - pytest
+ - requests
+ - scikit-learn
+ - scipy
+ - seaborn
+ - watermark
